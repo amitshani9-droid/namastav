@@ -1,0 +1,47 @@
+.shop-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 160px 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.shop-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 5rem;
+}
+
+.shop-header h1 {
+    font-size: 3.5rem;
+    color: var(--color-primary-forest-dark);
+    text-shadow: 0 2px 15px hsla(0, 0%, 100%, 0.4);
+}
+
+.shop-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* Deeper Blob Gradients */
+.ambient-shape.shape-2 {
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, var(--color-accent-sand) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+    animation: pulseGlow 12s infinite alternate;
+}
+
+.shop-content {
+    position: relative;
+    z-index: 5;
+}

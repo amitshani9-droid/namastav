@@ -1,0 +1,198 @@
+.home-page {
+    position: relative;
+    overflow: hidden;
+    padding-top: 140px;
+    min-height: 100vh;
+}
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 6rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    color: var(--color-primary-forest-dark);
+    text-shadow: 0 4px 20px hsla(0, 0%, 100%, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.hero-image-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 550px;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-elevation);
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: rotateY(-5deg) rotateX(2deg);
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Premium Gradient Blobs */
+.ambient-shape {
+    position: absolute;
+    filter: blur(90px);
+    z-index: 1;
+    opacity: 0.6;
+    border-radius: 50%;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.shape-1 {
+    top: -10%;
+    left: -5%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--color-pastel-cloud) 0%, transparent 70%);
+}
+
+.shape-2 {
+    top: 40%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-accent-sand) 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 2rem 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem;
+    border-radius: var(--border-radius-xl);
+    backdrop-filter: blur(30px) saturate(200%);
+    border: 1px solid var(--color-glass-border-light);
+}
+
+@media (min-width: 900px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.about-text {
+    flex: 1.5;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    color: var(--color-primary-forest-dark);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-text .highlight-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary-forest);
+    border-right: 4px solid var(--color-accent-sand);
+    padding-right: 1rem;
+}
+
+.about-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: hsla(0, 0%, 100%, 0.4);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    border: 1px solid var(--color-glass-border-light);
+    box-shadow: var(--shadow-ambient);
+    transition: transform 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-accent-sand);
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+        gap: 4rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .hero-image {
+        transform: none;
+    }
+}
