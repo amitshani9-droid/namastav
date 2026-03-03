@@ -1,5 +1,6 @@
 import React from 'react';
 import WhatsAppCTA from '../components/ui/WhatsAppCTA.jsx';
+import VideoSection from '../components/ui/VideoSection.jsx';
 import './Home.css';
 
 const Home = () => {
@@ -51,6 +52,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <VideoSection />
 
             <div className="ambient-shape shape-1"></div>
 
