@@ -14,12 +14,14 @@
 .wa-cta-primary {
     background-color: var(--color-primary-forest);
     color: var(--color-bg-silk);
+    animation: pulseGlow 4s infinite;
 }
 
 .wa-cta-primary:hover {
-    transform: translateY(-2px) scale(1.02);
+    animation-play-state: paused;
+    transform: translateY(-3px) scale(1.03);
     background-color: var(--color-accent-sand);
-    box-shadow: 0 6px 20px hsla(30, 53%, 64%, 0.3);
+    box-shadow: 0 8px 30px hsla(30, 53%, 64%, 0.5);
 }
 
 .wa-cta-floating {

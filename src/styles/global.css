@@ -59,13 +59,44 @@ main {
 /* Deep Glassmorphism Util - Premium WOW Effect */
 .glass {
     background: var(--color-glass-surface);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
     border-top: 1px solid var(--color-glass-border-light);
     border-left: 1px solid var(--color-glass-border-light);
     border-bottom: 1px solid var(--color-glass-border-dark);
     border-right: 1px solid var(--color-glass-border-dark);
     box-shadow: var(--shadow-elevation);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotateY(-5deg) rotateX(2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotateY(-3deg) rotateX(4deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotateY(-5deg) rotateX(2deg);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 4px 15px var(--color-shadow-soft);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 8px 30px hsla(30, 53%, 64%, 0.4);
+        transform: scale(1.02);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px var(--color-shadow-soft);
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 768px) {

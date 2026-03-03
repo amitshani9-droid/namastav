@@ -24,11 +24,14 @@
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
-    line-height: 1.05;
+    font-size: 5rem;
+    line-height: 1.1;
     margin-bottom: 2rem;
-    color: var(--color-primary-forest-dark);
-    text-shadow: 0 4px 20px hsla(0, 0%, 100%, 0.5);
+    background: linear-gradient(135deg, var(--color-primary-forest-dark), var(--color-accent-sand));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 30px hsla(30, 53%, 64%, 0.2);
 }
 
 .hero-subtitle {
@@ -56,41 +59,50 @@
     position: relative;
     z-index: 2;
     object-fit: cover;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    transform: rotateY(-5deg) rotateX(2deg);
+    animation: float 8s ease-in-out infinite;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-image-wrapper:hover .hero-image {
-    transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+    animation-play-state: paused;
+    transform: rotateY(0deg) rotateX(0deg) scale(1.05) !important;
     box-shadow: var(--shadow-hover);
 }
 
 /* Premium Gradient Blobs */
 .ambient-shape {
     position: absolute;
-    filter: blur(90px);
-    z-index: 1;
-    opacity: 0.6;
+    filter: blur(120px);
+    z-index: 0;
+    opacity: 0.8;
     border-radius: 50%;
     mix-blend-mode: multiply;
     pointer-events: none;
+    transition: all 1s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .ambient-shape {
+        mix-blend-mode: screen;
+        opacity: 0.5;
+    }
 }
 
 .shape-1 {
-    top: -10%;
-    left: -5%;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, var(--color-pastel-cloud) 0%, transparent 70%);
+    top: -15%;
+    left: -10%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, var(--color-pastel-cloud) 0%, transparent 60%);
 }
 
 .shape-2 {
-    top: 40%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
+    top: 30%;
+    right: -15%;
+    width: 800px;
+    height: 800px;
     background: radial-gradient(circle, var(--color-accent-sand) 0%, transparent 70%);
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 /* About Section */
@@ -153,17 +165,26 @@
 }
 
 .stat-card {
-    background: hsla(0, 0%, 100%, 0.4);
-    padding: 2rem;
+    background: hsla(0, 0%, 100%, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     text-align: center;
     border: 1px solid var(--color-glass-border-light);
     box-shadow: var(--shadow-ambient);
-    transition: transform 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .stat-card {
+        background: hsla(133, 15%, 20%, 0.5);
+    }
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-accent-sand);
 }
 
 .stat-number {
